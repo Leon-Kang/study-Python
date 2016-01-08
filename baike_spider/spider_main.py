@@ -5,8 +5,7 @@ import url_manager
 
 
 class SpiderMain(object):
-
-    def __int__(self):
+    def __init__(self):
         self.urls = url_manager.UrlManager()
         self.downloader = html_downloader.HtmlDownloader()
         self.parser = html_parser.HtmlParser()
@@ -15,7 +14,7 @@ class SpiderMain(object):
     def craw(self, root_urls):
         count = 1
 
-        self.urls.add_new_urls(root_urls)
+        self.urls.add_new_url(root_urls)
         while self.urls.has_new_url():
             try:
                 new_url = self.urls.get_new_url()
